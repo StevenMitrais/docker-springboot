@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworld-deployment
+  name: springboot-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: helloworld
+      app: springboot
   template:
     metadata:
       labels:
-        app: helloworld
+        app: springboot
     spec:
       containers:
-      - name: k8s-demo
-        image: wardviaene/k8s-demo
+      - name: springboot
+        image: steven1994/springboot
         ports:
-        - name: nodejs-port
-          containerPort: 3000
+        - containerPort: 8080

@@ -1,21 +1,20 @@
-# An Ingress with 2 hosts and 3 endpoints
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: helloworld-rules
+  name: springboot-rules
 spec:
   rules:
-  - host: helloworld-v1.example.com
+  - host: springboot-v1.domain.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: helloworld-v1
-          servicePort: 80
-  - host: helloworld-v2.example.com
+          serviceName: springboot-v1
+          servicePort: 8080
+  - host: springboot-v2.domain.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: helloworld-v2
-          servicePort: 80
+          serviceName: springboot-v2
+          servicePort: 8080
